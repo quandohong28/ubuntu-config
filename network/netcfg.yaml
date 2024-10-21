@@ -1,0 +1,15 @@
+network:
+  ethernets:
+    enp1s0: # config with enp1s0 interface
+      dhcp4: false # disable dhcp
+      addresses: [10.0.0.30/24] # set static ip address
+      routes: # set default gateway
+        - to: default # default gateway
+          via: 10.0.0.1 # gateway ip address
+          metric: 100 # metric
+      nameservers: # set dns server
+        addresses: [10.0.0.10,10.0.0.11] # dns server ip address
+        search: [srv.world, server.education] # search domain
+      dhcp6: false # disable dhcp6
+  version: 2 # version
+
